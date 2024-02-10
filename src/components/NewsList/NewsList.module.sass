@@ -1,0 +1,11 @@
+@import "../../styles/mixins"
+@import "../../styles/variables"
+
+@include container
+.newsList
+	@include flex(space-between, flex-start, 0px, 0px, row)
+	flex-wrap: wrap
+
+	@media screen and ( max-width:  480px)
+		justify-content: center
+

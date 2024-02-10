@@ -1,0 +1,52 @@
+@import "../../styles/mixins"
+@import "../../styles/variables"
+
+.newsItem
+	@include flex(space-between, flex-start, 0,0, column)
+	width: 210px
+	height: 300px
+	padding: 25px
+	background: $lightGrey
+	border-radius: 10px
+	cursor: pointer
+	transition: all 0.3s
+	margin: 10px 0
+
+	&:hover
+		scale: 1.1
+
+	&:nth-child(5n+1)
+		margin-left: 0 !important
+
+	&:nth-child(5n)
+		margin-right: 0 !important
+
+	@media screen and ( max-width: 1199 )
+			&:nth-child(5n+1)
+				margin-left: 0 !important
+
+			&:nth-child(5n)
+				margin-right: 0 !important
+
+			&:nth-child(4n+1)
+				margin-left: 0 !important
+
+			&:nth-child(4n)
+				margin-right: 0 !important
+
+
+	span
+		font-size: 3rem
+
+	h4
+		font-size: 1.8rem
+
+	.actions
+		width: 100%
+		@include flex(flex-end, center, 0, 0, row)
+
+		.icon
+			cursor: pointer
+			z-index: 10000
+
+

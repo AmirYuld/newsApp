@@ -1,0 +1,104 @@
+@mixin flex($jc, $ai: flex-start, $gap: 0, $rowGap: 0, $direction: row )
+	display: flex
+	flex-direction: $direction
+	justify-content: $jc
+	align-items: $ai
+	display: -webkit-box
+	display: -ms-flexbox
+	display: flex
+
+	.todoItem
+		&:last-child
+			margin-right: 0
+
+		&:first-child
+			margin-left: 0
+
+	@if $direction == row
+		-webkit-box-orient: horizontal
+		-webkit-box-direction: normal
+		-ms-flex-direction: row
+		flex-direction: row
+
+		.todoItem
+			margin: $rowGap $gap
+
+	@if $direction == column
+		-webkit-box-orient: vertical
+		-webkit-box-direction: normal
+		-ms-flex-direction: column
+		flex-direction: column
+
+		.todoItem
+			margin: $gap $rowGap
+
+	@if $jc == center
+		-webkit-box-pack: center
+		-ms-flex-pack: center
+		justify-content: center
+
+	@if $jc == flex-start
+		-webkit-box-pack: start
+		-ms-flex-pack: start
+		justify-content: flex-start
+
+	@if $jc == flex-end
+		-webkit-box-pack: end
+		-ms-flex-pack: end
+		justify-content: flex-end
+
+	@if $jc == space-between
+		-webkit-box-pack: justify
+		-ms-flex-pack: justify
+		justify-content: space-between
+
+	@if $ai == center
+		-webkit-box-align: center
+		-ms-flex-align: center
+		align-items: center
+
+	@if $ai == flex-start
+		-webkit-box-align: start
+		-ms-flex-align: start
+		align-items: flex-start
+
+	@if $ai == flex-end
+		-webkit-box-align: end
+		-ms-flex-align: end
+		align-items: flex-end
+
+	@if $ai == space-between
+		-webkit-box-align: space-between
+		-ms-flex-align: space-between
+		align-items: space-between
+
+@mixin bgImage($url, $position, $size)
+	background-image: url($url)
+	background-position: $position
+	background-size: $size
+	background-repeat: no-repeat
+
+@mixin border($width, $color, $radius)
+	border: $width solid $color
+	border-radius: $radius
+
+@mixin font($fz, $fw: 400, $color, $lh: 1, $ls: 1, $textAlign: left)
+	font-size: $fz
+	font-weight: $fw
+	color: $color
+	line-height: $lh
+	letter-spacing: $ls
+	text-align: $textAlign
+
+@mixin container
+	.container
+		width: 1200px
+		height: 100%
+		@include flex(flex-start, flex-start, 0, 0, column)
+		padding: 20px 30px
+
+		@media screen and ( max-width: 1200px )
+			width: 100%
+
+
+

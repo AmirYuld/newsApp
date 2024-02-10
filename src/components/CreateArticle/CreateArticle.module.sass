@@ -1,0 +1,43 @@
+@import "../../styles/mixins"
+@import "../../styles/variables"
+
+@include container
+.createTodo
+	background: $lightGrey
+	height: 100%
+	width: 100%
+	border-radius: 10px
+	padding: 10px
+
+	form
+		width: 100%
+		@include flex(flex-start, center, 0, 0, row)
+		flex-wrap: wrap
+
+		input
+			height: 40px
+			width: 200px
+			outline: none
+			border-radius: 10px
+			border: none
+			padding-left: 15px
+			font-size: 16px
+			margin: 5px
+
+		button
+			width: 160px
+			height: 40px
+			border-radius: 10px
+			background: $purple
+			color: white
+			outline: none
+			border: none
+			cursor: pointer
+			font-size: 18px
+			letter-spacing: 1.2px
+			margin: 5px 0
+
+@media screen and ( max-width: 700px )
+		form
+			flex-direction: column !important
+

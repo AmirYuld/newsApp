@@ -1,0 +1,17 @@
+@import "variables.sass"
+@import "mixins.sass"
+
+html
+  font-size: 10px
+
+  @media screen and (max-width: 800px)
+    font-size: 7.5px
+
+  @media screen and (max-width: 400px)
+      font-size: 6.5px
+
+  body
+    background: $light
+    @include flex(center, flex-start, 0, 0, row)
+
+
